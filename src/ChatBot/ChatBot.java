@@ -21,6 +21,18 @@ public class ChatBot {
         for(int i=0;i <= number;i++){
             System.out.println(i + "!");
         }
+        for(int j = 0;j<=2;j++){
+            System.out.println("A little test: \n1) 2+2=?  \n1.3 2.4 3.5" );
+            int answer = scanner.nextInt();
+            if(answer != 2){
+                System.out.println("Please, try again");
+                continue;
+            }else if(answer == 2){
+                System.out.println("Great, you right!");
+                System.out.println("Good bye, have a nice day!");
+                break;
+            }
+        }
 
 
     }
