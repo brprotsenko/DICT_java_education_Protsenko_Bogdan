@@ -34,4 +34,38 @@ public class Hangman {
         }
         check(word,rndWords,letters);
     }
+    public void check(Set<String> word,String rndWords,List<String> letters){
+        Scanner scanner = new Scanner(System.in);
+        String replaceword;
+        System.out.println(rndWords.replaceAll("[a-zA-Z]","-"));
+        for(int i = 8; i >= 1;){
+            System.out.print("Input a letter:> ");
+            String letter = scanner.nextLine();
+            if(letters.contains(letter)){
+                System.out.println("You've already guessed this letter.");
+            }
+            if(letter.length() > 1){
+                System.out.println("You should input a single letter.");
+            }
+            if(word.contains(letter) && !letters.contains(letter)){
+                letters.add(letter);
+                replaceword = rndWords.replaceAll("[^"+letters+"]","-");
+                System.out.println(replaceword);
+            }
+            if (letter.matches("[A-Z]")){
+                System.out.println("Please enter a lowercase English letter.");
+            }
+            if (letters.size() == word.size()){
+                System.out.println("You survived!");
+                break;
+            }
+            if (!word.contains(letter) && letter.length() < 2){
+                System.out.println("That letter doesn't appear in the word");
+                i--;
+                if(i==0){
+                    System.out.println("You lost!");
+                }
+            }
+        }
+    }
 }
