@@ -100,4 +100,16 @@ public class TicTacToe {
             System.exit(0);
         }
     }
+    static void replacefield(String[][] field){
+        for (int i = 0; i < 5; i++) {
+            System.out.println("");
+            for (int j = 0; j < 5; j++) {
+                field[i][0] = "|";
+                field[i][4] = "|";
+                field[0][j] = "-";
+                field[4][j] = "-";
+                System.out.print(field[i][j] + " ");
+            }
+        }
+    }
 }
