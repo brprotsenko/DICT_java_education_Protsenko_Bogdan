@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -55,6 +56,48 @@ public class TicTacToe {
                     System.out.println("Impossible");
                 }
             }
+        }
+    }
+    static void checkwin(String[][] field){
+        if(Objects.equals(field[1][1], field[1][2]) && Objects.equals(field[1][2], field[1][3]) &&
+                !Objects.equals(field[1][1], "_") && !Objects.equals(field[1][2], "_") && !Objects.equals(field[1][3], "_") ){
+            System.out.println(field[1][1]+" winner");
+            System.exit(0);
+        }
+        if(Objects.equals(field[2][1], field[2][2]) && Objects.equals(field[2][2], field[2][3]) &&
+                !Objects.equals(field[2][1], "_") && !Objects.equals(field[2][2], "_") && !Objects.equals(field[2][3], "_") ){
+            System.out.println(field[2][1]+" winner");
+            System.exit(0);
+        }
+        if(Objects.equals(field[3][1], field[3][2]) && Objects.equals(field[3][2], field[3][3]) &&
+                !Objects.equals(field[3][1], "_") && !Objects.equals(field[3][2], "_") && !Objects.equals(field[3][3], "_") ){
+            System.out.println(field[3][1]+" winner");
+            System.exit(0);
+        }
+        if(Objects.equals(field[1][1], field[2][1]) && Objects.equals(field[2][1], field[3][1]) &&
+                !Objects.equals(field[1][1], "_") && !Objects.equals(field[2][1], "_") && !Objects.equals(field[3][1], "_") ){
+            System.out.println(field[1][1]+" winner");
+            System.exit(0);
+        }
+        if(Objects.equals(field[1][2], field[2][2]) && Objects.equals(field[2][2], field[3][2]) &&
+                !Objects.equals(field[1][2], "_") && !Objects.equals(field[2][2], "_") && !Objects.equals(field[3][2], "_") ){
+            System.out.println(field[1][2]+" winner");
+            System.exit(0);
+        }
+        if(Objects.equals(field[1][3], field[2][3]) && Objects.equals(field[2][3], field[3][3]) &&
+                !Objects.equals(field[1][3], "_") && !Objects.equals(field[2][3], "_") && !Objects.equals(field[3][3], "_") ){
+            System.out.println(field[1][3]+" winner");
+            System.exit(0);
+        }
+        if(Objects.equals(field[1][1], field[2][2]) && Objects.equals(field[2][2], field[3][3]) &&
+                !Objects.equals(field[1][1], "_") && !Objects.equals(field[2][2], "_") && !Objects.equals(field[3][3], "_") ){
+            System.out.println(field[1][1]+" winner");
+            System.exit(0);
+        }
+        if(Objects.equals(field[1][3], field[2][2]) && Objects.equals(field[2][2], field[3][1]) &&
+                !Objects.equals(field[1][3], "_") && !Objects.equals(field[2][2], "_") && !Objects.equals(field[3][1], "_") ){
+            System.out.println(field[1][3]+" winner");
+            System.exit(0);
         }
     }
 }
