@@ -1,7 +1,6 @@
 package Hangman;
 
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 public class Hangman {
     public void play(){
@@ -19,5 +18,20 @@ public class Hangman {
                 break;
             }
         }
+    }
+    public void words() {
+        Random random = new Random();
+        List<String> Words = new ArrayList<String>();
+        Words.add("java");
+        Words.add("python");
+        Words.add("javascript");
+        Words.add("kotlin");
+        String rndWords = Words.get(random.nextInt(Words.size()));
+        Set<String> word = new HashSet<>();
+        List<String> letters = new ArrayList<>();
+        for (int j = 0; j < rndWords.length(); j++) {
+            word.add(String.valueOf(rndWords.charAt(j)));
+        }
+        check(word,rndWords,letters);
     }
 }
