@@ -112,4 +112,16 @@ public class TicTacToe {
             }
         }
     }
+    static void replacechar(String[] xo,String[][] field,int[] coordinates){
+        field[coordinates[0]][coordinates[1]] = xo[0];
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if(Objects.equals(xo[0],"O")){
+                    xo[0] = "X";
+                }else {
+                    xo[0] = "O";
+                }
+            }
+        }
+    }
 }
